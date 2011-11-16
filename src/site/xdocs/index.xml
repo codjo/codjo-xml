@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<document>
+
+    <properties>
+        <title>agf-xml</title>
+    </properties>
+
+    <body>
+
+        <section name="agf-xml">
+            <p> Module de parsing XML : </p>
+            <ul>
+                <li>
+                    <a href="#fast">fast</a> : pour le parsing rapide
+                </li>
+                <li>
+                    <a href="#easy">easy</a> : pour le parsing simplifié.
+                </li>
+            </ul>
+        </section>
+
+        <section name="XML Fast">
+            <a name="fast"></a>
+            <subsection name="Description">
+                <p>
+                    Ce module permet d'accelerer les temps de parsing des fichiers xml.
+                    Cela permet d'eviter l'utilisation de librairies comme xerces et de
+                    la remplacer par
+                    <a href="http://sourceforge.net/projects/piccolo">piccolo</a>
+                    plus legere.
+                </p>
+                <table>
+                    <tr>
+                        <th>Package</th>
+                        <th>Commentaire</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./apidocs/net.codjo/xml/fast/package-summary.html">
+                                net.codjo.xml.fast </a>
+                        </td>
+                        <td>
+                            Classe Utilitaire pour parser des fichiers XML (rapidement).
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./apidocs/net.codjo/xml/fast/factory/package-summary.html">
+                                net.codjo.xml.fast.factory </a>
+                        </td>
+                        <td>
+                            Classe permettant de creer un XMLReader pour le parsing.
+                        </td>
+                    </tr>
+                </table>
+            </subsection>
+            <subsection name="Utilisation">
+                <p>
+                    Pour utiliser ce module, il suffit de definir une implementation de l'interface
+                    ClientContentHandler, i.e. les methodes :
+                    <ul>
+                        <li>startElement(String name,Map attributes) --> appelee en debut de balise (fournit les attributs)</li>
+                        <li>endElement(String name, String value)    --> appelee en fin de balise (fournit la valeur)</li>
+                    </ul>
+                    <br></br>
+                    Par exemple :
+                    <source>
+                        <![CDATA[
+    // MonImplementation = implementation de ClientContentHandler
+    private XmlParser xmlParser = new XmlParser();
+    ClientContentHandler fastClientContentHandler = new MonImplementation();
+    xmlParser.parse(fileName, fastClientContentHandler);
+                        ]]>
+                    </source>
+                </p>
+            </subsection>
+        </section>
+
+
+        <section name="XML Easy">
+            <a name="easy"></a>
+            <subsection name="Description">
+                <p>
+                    Cette API est la pour la lecture des fichiers de configuration XML.
+                    Elle est basée sur Digester, le projet open source d'apache commun.
+                    <a href="http://jakarta.apache.org/commons/digester/api/index.html">Digester</a>
+                </p>
+                <table>
+                    <tr>
+                        <th>Package</th>
+                        <th>Commentaire</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./apidocs/net.codjo/xml/easyxml/package-summary.html">
+                                net.codjo.xml.easyxml </a>
+                        </td>
+                        <td>
+                            Classe Utilitaire pour mapper des fichiers XML en classes java.
+                        </td>
+                    </tr>
+                </table>
+            </subsection>
+            <subsection name="Utilisation">
+                <p>
+                    Voir lien :
+                    <a href="Utilisation de EasyXML.doc">Utilisation de EasyXML</a>
+                </p>
+                <p>
+                    Article d'introduction sur
+                    <a href="http://www.theserverside.com/articles/article.tss?l=Digester">theserverside</a>
+                </p>
+            </subsection>
+        </section>
+    </body>
+</document>

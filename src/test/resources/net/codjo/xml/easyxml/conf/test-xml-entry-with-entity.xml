@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE catalog [
+    <!ENTITY name           SYSTEM "file:name.txt">
+]>
+<catalog library="somewhere">
+   <book>
+      <author>&name;</author>
+      <title>Title 1</title>
+   </book>
+</catalog>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE digester-rules SYSTEM "file:digester-rules.dtd">
+<digester-rules>
+    <object-create-rule pattern="catalog" classname="net.codjo.xml.easyxml.Catalog"/>
+
+    <set-properties-rule pattern="catalog">
+        <alias attr-name="library" prop-name="library"/>
+    </set-properties-rule>
+
+
+    <pattern value="catalog/book">
+        <object-create-rule classname="net.codjo.xml.easyxml.Book"/>
+        <set-properties-rule/>
+
+        <bean-property-setter-rule pattern="author"/>
+        <bean-property-setter-rule pattern="title"/>
+        <!-- a faire sortir de la vers catalog-->
+        <set-next-rule methodname="addBook"/>
+    </pattern>
+
+    <pattern value="catalog/magazine">
+        <object-create-rule classname="net.codjo.xml.easyxml.Magazine"/>
+
+        <call-method-rule pattern="name" methodname="setName" paramcount="0"/>
+        <call-method-rule pattern="article" methodname="addArticle" paramcount="2" paramtypes="java.lang.String,java.lang.String"/>
+        <call-param-rule pattern="article" attrname="page" paramnumber="0"/>
+        <call-param-rule pattern="article" paramnumber="1"/>
+
+        <set-next-rule methodname="addMagazine"/>
+    </pattern>
+</digester-rules>

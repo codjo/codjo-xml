@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!ENTITY % rule-elements "bean-property-setter-rule | call-method-rule |
+                   call-param-rule | object-param-rule |
+                   factory-create-rule | object-create-rule |
+                   set-properties-rule | set-property-rule | set-top-rule |
+                   set-next-rule" >
+
+<!ELEMENT digester-rules (pattern | include | bean-property-setter-rule | call-method-rule | call-param-rule |  object-param-rule | factory-create-rule | object-create-rule | set-properties-rule | set-property-rule | set-top-rule | set-next-rule )*>
+
+<!ELEMENT pattern (pattern | include | bean-property-setter-rule | call-method-rule | call-param-rule |
+                   factory-create-rule | object-create-rule |
+                   set-properties-rule | set-property-rule | set-top-rule |
+                   set-next-rule )*>
+<!ATTLIST pattern
+    value CDATA #REQUIRED>
+
+<!ELEMENT include EMPTY>
+<!ATTLIST include
+    path  CDATA #IMPLIED
+    class CDATA #IMPLIED>
+
+<!ELEMENT bean-property-setter-rule EMPTY>
+<!ATTLIST bean-property-setter-rule
+    pattern      CDATA #IMPLIED
+    propertyname CDATA #IMPLIED>
+
+<!ELEMENT call-method-rule EMPTY>
+<!ATTLIST call-method-rule
+    pattern    CDATA #IMPLIED
+    methodname CDATA #REQUIRED
+    paramcount CDATA #IMPLIED
+    paramtypes CDATA #IMPLIED>
+
+<!ELEMENT call-param-rule EMPTY>
+<!ATTLIST call-param-rule
+    pattern  CDATA #IMPLIED
+    paramnumber CDATA #REQUIRED
+    attrname CDATA #IMPLIED
+    from-stack CDATA #IMPLIED>
+    
+<!ELEMENT object-param-rule EMPTY>
+<!ATTLIST object-param-rule
+    pattern  CDATA #IMPLIED
+    paramnumber CDATA #REQUIRED
+    param CDATA #REQUIRED
+    attrname CDATA #IMPLIED
+    type CDATA #REQUIRED
+    value CDATA #IMPLIED>
+
+<!ELEMENT factory-create-rule EMPTY>
+<!ATTLIST factory-create-rule
+    pattern   CDATA #IMPLIED
+    classname CDATA #REQUIRED
+    attrname  CDATA #IMPLIED
+    ignore-exceptions  CDATA #IMPLIED> 
+
+<!ELEMENT object-create-rule EMPTY>
+<!ATTLIST object-create-rule
+    pattern   CDATA #IMPLIED
+    classname CDATA #REQUIRED
+    attrname  CDATA #IMPLIED>
+
+<!ELEMENT set-properties-rule (alias)*>
+<!ATTLIST set-properties-rule
+    pattern   CDATA #IMPLIED>
+
+<!ELEMENT alias EMPTY>
+<!ATTLIST alias
+ attr-name CDATA #REQUIRED
+ prop-name CDATA #IMPLIED>
+
+<!ELEMENT set-property-rule EMPTY>
+<!ATTLIST set-property-rule
+    pattern   CDATA #IMPLIED
+    name      CDATA #IMPLIED
+    value     CDATA #IMPLIED>
+
+<!ELEMENT set-top-rule EMPTY>
+<!ATTLIST set-top-rule
+    pattern    CDATA #IMPLIED
+    methodname CDATA #REQUIRED
+    paramtype  CDATA #IMPLIED>
+
+<!ELEMENT set-next-rule EMPTY>
+<!ATTLIST set-next-rule
+    pattern    CDATA #IMPLIED
+    methodname CDATA #REQUIRED
+    paramtype  CDATA #IMPLIED>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<catalog library="somewhere">
+
+   <book>
+      <author>Author 1</author>
+      <title>Title 1</title>
+   </book>
+
+   <book>
+      <author>Author 2</author>
+      <title>His One Book</title>
+   </book>
+
+   <magazine>
+      <name>Mag Title 1</name>
+
+      <article page="5">Some Headline</article>
+
+      <article page="9"><![CDATA[Another Headline]]></article>
+         <!--headline>Another Headline</headline>
+      </article-->
+   </magazine>
+
+   <book>
+      <author>Author 2</author>
+      <title>His Other Book</title>
+   </book>
+
+   <magazine>
+      <name>Mag Title 2</name>
+
+      <article page="17">Second Headline</article>
+         <!--headline>Second Headline</headline>
+      </article-->
+   </magazine>
+
+</catalog>

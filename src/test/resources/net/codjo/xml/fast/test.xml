@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<data>
+  <configuration medhi="mehdi">
+    <project>
+        <name coucou="hahaha">Roses</name>
+    </project>
+    <path>
+        <sql>../application/sql/Tables</sql>
+        <structure>../modules/presentation/ejb/src/conf</structure>
+    </path>
+  </configuration>
+</data>

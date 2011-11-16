@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+     | POM Relationships
+     -->
+
+    <parent>
+        <groupId>net.codjo.pom</groupId>
+        <artifactId>codjo-pom-library</artifactId>
+        <version>SNAPSHOT</version>
+    </parent>
+    <groupId>net.codjo.xml</groupId>
+    <artifactId>codjo-xml</artifactId>
+    <version>2.2-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>commons-digester</groupId>
+            <artifactId>commons-digester</artifactId>
+            <scope>compile</scope>
+              <exclusions>
+                <exclusion>
+                  <groupId>xml-apis</groupId>
+                	<artifactId>xml-apis</artifactId>
+              	</exclusion>
+              </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+    </dependencies>
+
+    <!--
+    | Project Information
+    -->
+
+    <name>Lib &gt; AGF xml</name>
+    <description>Librairie XML composé de :
+        Xml Rapide : Cette première API est la pour les communications Client - Serveur Weblogic.
+        Xml Facile : Cette API est la pour la lecture des fichiers de configuration XML.
+    </description>
+    <inceptionYear>2004</inceptionYear>
+
+    <!--
+    | Environment Information
+    -->
+
+    <scm>
+        <connection>scm:git:https://github.com/codjo/codjo-xml.git</connection>
+        <developerConnection>scm:git:https://github.com/codjo/codjo-xml.git</developerConnection>
+        <url>https://github.com/codjo/codjo-xml</url>
+    </scm>
+
+</project>

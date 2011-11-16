@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+    <properties>
+        <title>Changes</title>
+    </properties>
+    <body>
+        <release version="1.05" date="2004-07-20">
+            <action dev="rivierv" type="update">
+                Passage à log4j-1.2.8.
+            </action>
+        </release>
+        <release version="1.04" date="2004-02-24">
+            <action dev="gonnot" type="add">
+                Ajout d'une exception 'XmlException' (anciennement FastXmlException) avec
+                prise en compte dans easyxml.
+            </action>
+            <action dev="gonnot" type="fix">
+                Correction de l'entity resolver (L'entity resolver specifé était inutilisé).
+            </action>
+            <action dev="gonnot" type="fix">
+                Suppression des commentaires dans la DTD. Dans certains cas, lancement
+                des tests via JCoverage par exemple, le parseur n'accepte pas les
+                commentaires.
+            </action>
+            <action dev="gonnot" type="fix">
+                Suppression des commentaires created (non conforme javadoc).
+            </action>
+            <action dev="gonnot" type="fix">
+                Suppression d'un attribut inutile (URL rulesFile).
+            </action>
+        </release>
+        <release version="1.03" date="2004-02-11">
+            <action dev="gonnot" type="fix">
+                Correction du reader a partir d'une URL.
+            </action>
+        </release>
+        <release version="1.02" date="2004-02-10">
+            <action dev="gonnot" type="fix">
+                Correction de entity resolver.
+            </action>
+        </release>
+        <release version="1.01" date="2004-01-07">
+            <action dev="palmont" type="add">
+                <source><![CDATA[
+                    Xml Rapide : Cette première API est la pour les communications Client - Serveur Weblogic.
+                    Xml Facile : Cette API est la pour la lecture des fichiers de configuration XML.
+                ]]>
+                </source>
+            </action>
+        </release>
+        <release version="1.00" date="2004-01-06" description="creation">
+            <action dev="MARCONA-ABOUELF" type="creation">
+                <source><![CDATA[
+                    Creation d'une superbe librairie utilisant piccolo pour
+                    optimiser les parsings XML dans la couche presentation
+                ]]>
+                </source>
+            </action>
+        </release>
+    </body>
+</document>
