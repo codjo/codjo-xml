@@ -42,9 +42,9 @@
     -->
 
     <name>Lib &gt; AGF xml</name>
-    <description>Librairie XML compos� de :
-        Xml Rapide : Cette premi�re API est la pour les communications Client - Serveur Weblogic.
-        Xml Facile : Cette API est la pour la lecture des fichiers de configuration XML.
+    <description>Contains 2 specific API :
+        Fast Xml : Used for the communication between our server and client.
+        Easy Xml : Used for XML configuration file reading.
     </description>
     <inceptionYear>2004</inceptionYear>
 
